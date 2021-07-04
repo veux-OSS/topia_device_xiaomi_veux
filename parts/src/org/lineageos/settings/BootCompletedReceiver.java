@@ -20,10 +20,12 @@ package org.lineageos.settings;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.UserHandle;
 import android.util.Log;
 
 import org.lineageos.settings.refreshrate.RefreshUtils;
 import org.lineageos.settings.touchsampling.TouchSamplingUtils;
+import org.lineageos.settings.touchsampling.TouchSamplingService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;
@@ -45,5 +47,13 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         // Add additional boot-completed actions if needed
         // High Touch polling rate
         TouchSamplingUtils.restoreSamplingValue(context);
+    }
+
+    private void startServices(Context context) {
+        if (DEBUG) Log.i(TAG, "Starting services...");
+
+        // Start Touch Sampling Service
+        context.startServiceAsUser(new Intent(context, TouchSamplingService.class),
+                UserHandle.CURRENT);
     }
 }
