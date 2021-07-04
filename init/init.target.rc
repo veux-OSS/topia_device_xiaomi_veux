@@ -117,6 +117,8 @@ on boot
     chmod 0644 /sys/bus/platform/devices/soc:fpc1020/regulator_enable
     chmod 0644 /sys/bus/platform/devices/soc:fpc1020/compatible_all
     chown system system /sys/class/thermal/thermal_message/sconfig
+    chown system system /sys/devices/platform/goodix_ts.0/switch_report_rate
+    chmod 0664 /sys/devices/platform/goodix_ts.0/switch_report_rate
 
     mkdir /mnt/vendor/persist/camera 0777 system system
     chmod 0666 /mnt/vendor/persist/camera/rear_dc_cal_wu.bin

@@ -58,5 +58,9 @@
 /data/vendor/thermal(/.*)?                                                     u:object_r:thermal_data_file:s0
 /vendor/bin/mi_thermald                                                        u:object_r:mi_thermald_exec:s0
 
+
+# Touch
+/sys/devices/platform/goodix_ts.0/switch_report_rate u:object_r:sysfs_htsr:s0
+
 # Xiaomi MAC
 /data/vendor/mac_addr(/.*)?                                                    u:object_r:vendor_wifi_vendor_data_file:s0
