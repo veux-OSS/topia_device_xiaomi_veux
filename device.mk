@@ -187,16 +187,6 @@ PRODUCT_PACKAGES += \
     android.hardware.light-service.xiaomi
 
 # Media
-PRODUCT_PACKAGES += \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc \
-    libmm-omxcore \
-    libstagefrighthw
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_blair.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_blair.xml \
     $(LOCAL_PATH)/configs/media/media_codecs_performance_blair.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_blair.xml \
