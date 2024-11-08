@@ -98,10 +98,6 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             grep -q "gettid: 1" "${2}" || echo "gettid: 1" >> "${2}"
             ;;
-        vendor/lib/hw/audio.primary.veux.so)
-            [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed "liba2dpoffload.so" "liba2dpoffload_veux.so" "${2}"
-            ;;
         vendor/lib64/android.hardware.secure_element@1.0-impl.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
