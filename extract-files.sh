@@ -16,6 +16,10 @@ if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 ANDROID_ROOT="${MY_DIR}/../../.."
 
+# Define the default patchelf version used to patch blobs
+# This will also be used for utility functions like FIX_SONAME
+export PATCHELF_VERSION=0_18
+
 HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
@@ -109,7 +113,7 @@ function blob_fixup() {
             ;;
         vendor/lib64/libgoodixhwfingerprint.so)
             [ "$2" = "" ] && return 0
-            "${PATCHELF_0_17_2}" --replace-needed "libvendor.goodix.hardware.biometrics.fingerprint@2.1.so" "vendor.goodix.hardware.biometrics.fingerprint@2.1.so" "${2}"
+            "${PATCHELF}" --replace-needed "libvendor.goodix.hardware.biometrics.fingerprint@2.1.so" "vendor.goodix.hardware.biometrics.fingerprint@2.1.so" "${2}"
             ;;
         vendor/lib64/libwvhidl.so|vendor/lib64/mediadrm/libwvdrmengine.so)
             [ "$2" = "" ] && return 0
