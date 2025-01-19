@@ -147,9 +147,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.qti \
     android.hardware.health-service.qti_recovery
 
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
 # Hotword enrollment
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml

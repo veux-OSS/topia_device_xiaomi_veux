@@ -112,9 +112,6 @@ TARGET_KERNEL_CONFIG := veux_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6375
 TARGET_KERNEL_NO_GCC := true
 
-# Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
-
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := peux,veux
 
