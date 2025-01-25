@@ -23,10 +23,15 @@ import android.content.Intent;
 import android.os.UserHandle;
 import android.util.Log;
 
+import org.lineageos.settings.autohbm.AutoHbmActivity;
+import org.lineageos.settings.autohbm.AutoHbmFragment;
+import org.lineageos.settings.autohbm.AutoHbmTileService;
+import org.lineageos.settings.Constants;
 import org.lineageos.settings.refreshrate.RefreshUtils;
 import org.lineageos.settings.touchsampling.TouchSamplingUtils;
 import org.lineageos.settings.touchsampling.TouchSamplingService;
 import org.lineageos.settings.touchsampling.TouchSamplingTileService;
+import org.lineageos.settings.utils.ComponentUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;
@@ -41,6 +46,15 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         Log.i(TAG, "Boot completed, starting services");
         RefreshUtils.startService(context);
+
+        // Handle boot completed actions
+        handleBootCompleted(context);
+
+        // Start additional services
+        startServices(context);
+
+        // Apply Auto HBM settings
+        applyAutoHbmSettings(context);
     }
 
     private void handleBootCompleted(Context context) {
@@ -60,5 +74,23 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         // Touch Sampling Tile Service
         context.startServiceAsUser(new Intent(context, TouchSamplingTileService.class), 
                 UserHandle.CURRENT);
+    }
+
+    private void applyAutoHbmSettings(Context context) {
+        Log.d(TAG, "Applying Auto HBM settings...");
+        AutoHbmFragment.toggleAutoHbmService(context);
+
+        ComponentUtils.toggleComponent(
+                context,
+                AutoHbmActivity.class,
+                true
+        );
+
+        ComponentUtils.toggleComponent(
+                context,
+                AutoHbmTileService.class,
+                true
+        );
+        Log.d(TAG, "Auto HBM settings applied");
     }
 }

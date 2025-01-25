@@ -93,9 +93,13 @@ on boot
     setprop ro.telephony.call_ring.multiple false
 
     chown system system /sys/class/backlight/panel0-backlight/brightness
+    chmod 0666 /sys/class/backlight/panel0-backlight/brightness
     chown system system /sys/class/backlight/panel0-backlight/max_brightness
+    chmod 0666 /sys/class/backlight/panel0-backlight/max_brightness
     chown system system /sys/class/backlight/panel1-backlight/brightness
+    chmod 0666 /sys/class/backlight/panel1-backlight/brightness
     chown system system /sys/class/backlight/panel1-backlight/max_brightness
+    chmod 0666 /sys/class/backlight/panel1-backlight/max_brightness
 
     # Create directory used for display
     mkdir /mnt/vendor/persist/display 0770 system graphics
