@@ -21,4 +21,14 @@
 
 ## Device Picture
 
-![POCO X4 Pro 5G/Redmi Note 11E Pro/Redmi Note 11 Pro 5G/Redmi Note 11 Pro+ 5G](https://i.ibb.co/4syxpfw/330608dc148bfa50f6326d996d6c8e8b.png "POCO X4 Pro 5G/Redmi Note 11E Pro/Redmi Note 11 Pro 5G/Redmi Note 11 Pro+ 5G")
+![POCO X4 Pro 5G/Redmi Note 11E Pro/Redmi Note 11 Pro 5G/Redmi Note 11 Pro+ 5G](https://raw.githubusercontent.com/Karan-Frost/images/refs/heads/main/veux.png "POCO X4 Pro 5G/Redmi Note 11E Pro/Redmi Note 11 Pro 5G/Redmi Note 11 Pro+ 5G")
+
+## Copyright
+
+```
+#
+# Copyright (C) 2023-2024 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+```
