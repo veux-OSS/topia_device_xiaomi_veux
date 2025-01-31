@@ -1,6 +1,3 @@
-# Brightness Curve
-persist.sys.brightness.low.gamma=true
-
 # Disable vsync for cpu rendered apps
 debug.cpurend.vsync=false
 
