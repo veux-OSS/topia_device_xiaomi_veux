@@ -168,6 +168,9 @@ drm.service.enabled=true
 persist.vendor.fingerprint.type=side
 persist.vendor.fingerprint.sensor_location=1080|922|0|local:4630947081618265473
 
+# FUSE passthrough
+persist.sys.fuse.passthrough.enable=true
+
 # Graphics
 debug.sf.auto_latch_unsignaled=0
 debug.sf.disable_backpressure=1
