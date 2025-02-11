@@ -18,6 +18,11 @@ rm -rf hardware/xiaomi && git clone https://github.com/PixelOS-AOSP/hardware_xia
 rm -rf hardware/xiaomi/dolby
 rm -rf hardware/qcom-caf/sm8350/audio && git clone https://github.com/frost-testzone/hardware_qcom-caf_sm8350_audio hardware/qcom-caf/sm8350/audio
 
+echo "Cloning OTA Stuff...."
+# OTA
+rm -rf packages/apps/Updater
+git clone https://github.com/tranQuila-Project/packages_apps_Updater packages/apps/Updater
+
 echo "Cloning MIUI Camera..."
 # MIUI Camera
 git clone https://github.com/tranQuila-Project/vendor_xiaomi_miuicamera-veux.git vendor/xiaomi/miuicamera-veux
