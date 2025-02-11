@@ -28,4 +28,8 @@ echo "Cloning MIUI Camera..."
 git clone https://github.com/tranQuila-Project/vendor_xiaomi_miuicamera-veux.git vendor/xiaomi/miuicamera-veux
 cd vendor/xiaomi/veux/proprietary/system/priv-app/MiuiCamera/ && rm -rf MiuiCamera.apk && wget https://github.com/MrTopia/device_xiaomi_veux/releases/download/stuffs/MiuiCamera.apk && cd ../../../../../../..
 
+echo "Cloning ViPER..."
+# ViPER
+git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX.git packages/apps/ViPER4AndroidFX
+
 echo "Completed, proceeding to lunch"
