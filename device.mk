@@ -176,7 +176,7 @@ PRODUCT_PACKAGES += \
     android.hardware.ir-service.xiaomi
 
 # Kernel
-OVERRIDE_ENABLE_UFFD_GC := false
+PRODUCT_ENABLE_UFFD_GC := true
 
 # Media
 PRODUCT_COPY_FILES += \
